@@ -1,0 +1,17 @@
+<main>
+    <div class="container body-content span=8 offset=2">
+        <div class="well">
+            <form class="form-horizontal" th:action="@{/categories}" method="post">
+            </form>
+        <div class="row">
+            <div class="col-md-6" th:each="category : ${categories}">
+                <header>
+                    <h2>
+                        <a th:href="@{category/{id}(id = ${category.id})}" th:text="${category.name}">
+                        </a>
+                    </h2>
+                </header>
+            </div>
+        </div>
+    </div>
+</main>
