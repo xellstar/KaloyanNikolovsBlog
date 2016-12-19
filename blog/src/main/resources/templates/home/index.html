@@ -2,6 +2,24 @@
     <div class="container body-content">
         <div class="row">
             <h2>Latest News:</h2>
+            <table class="table table-striped table-hover ">
+                <thead>
+                <th>#</th>
+                <th>Name</th>
+                </thead>
+                <div class="col-md-6" th:each="category : ${categories}">
+                <tbody>
+                <tr>
+                    <td>
+                        <span th:text="${category.id}"></span>
+                    </td>
+                    <td>
+                        <a th:href="@{category/{id}(id = ${category.id})}" th:text="${category.name}"></a>
+                    </td>
+                </tr>
+                </tbody>
+                </div>
+            </table>
         </div>
     </div>
 </main>

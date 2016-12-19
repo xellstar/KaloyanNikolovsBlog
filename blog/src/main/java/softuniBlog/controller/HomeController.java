@@ -29,6 +29,17 @@ public class HomeController {
         return "base-layout";
     }
 
+    @GetMapping("/categories")
+    public String categories(Model model) {
+
+        List<Category> categories = this.categoryRepository.findAll();
+
+        model.addAttribute("view", "home/categories");
+        model.addAttribute("categories", categories);
+
+        return "base-layout";
+    }
+
     @RequestMapping("/error/403")
     public String accessDenied(Model model){
         model.addAttribute("view", "error/403");

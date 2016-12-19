@@ -3701,11 +3701,11 @@ tbody.collapse.in {
   margin-bottom: 2px;
 }
 @media (min-width: 768px) {
-  .navbar-right .dropdown-menu {
+  .navbar-right {
     left: auto;
     right: 0;
   }
-  .navbar-right .dropdown-menu-left {
+  .navbar-right {
     left: 0;
     right: auto;
   }
