@@ -36,6 +36,17 @@ public class ArticleController {
     @Autowired
     private TagRepository tagRepository;
 
+
+    @GetMapping("/articles")
+    public String articlesList(Model model) {
+        List<Article> articles = this.articleRepository.findAll();
+
+        model.addAttribute("view", "article/list");
+        model.addAttribute("articles", articles);
+
+        return "base-layout";
+    }
+
     @GetMapping("/category/{id}")
     public String list(Model model, @PathVariable Integer id){
         Set<Article> articles = this.categoryRepository.findOne(id).getArticles();

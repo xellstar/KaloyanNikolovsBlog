@@ -1,5 +1,11 @@
 <main>
     <div class="container body-content span=8 offset=2">
+        <div class="alert alert-danger" th:if="${error}">
+            <strong th:text="${error}"></strong>
+        </div>
+        <div class="alert alert-success" th:if="${successfullyCreatedUser}">
+            <strong th:text="${successfullyCreatedUser}"></strong>
+        </div>
         <div class="well">
             <form class="form-horizontal" th:action="@{/login}" method="post">
                 <fieldset>

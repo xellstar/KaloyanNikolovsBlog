@@ -18,6 +18,9 @@ public class HomeController {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private ArticleRepository articleRepository;
+
     @GetMapping("/")
     public String index(Model model) {
 

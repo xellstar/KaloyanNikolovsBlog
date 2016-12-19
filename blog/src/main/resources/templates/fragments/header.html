@@ -11,20 +11,10 @@
                     </button>
                 </div>
                 <div class="navbar-header">
-                    <ul class="nav navbar-left">
-                        <li>
-                            <div class="dropdown">
-                                <button class="dropbtn">Menu</button>
-                                    <div class="dropdown-content">
-                                        <a th:href="@{/categories}">Categories</a>
-                                    </div>
-                            </div>
-                        </li>
-                    </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li sec:authorize="isAuthenticated()">
                             <a th:href="@{/article/create}">
-                                Create Article
+                                New Article
                             </a>
                         </li>
                         <li sec:authorize="isAuthenticated()">
@@ -56,6 +46,16 @@
                                 </div>
                             </div>
                         </li>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn">Menu</button>
+                                    <div class="dropdown-content">
+                                        <a th:href="@{/categories}">Categories</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </ul>
                 </div>
             </div>

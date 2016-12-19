@@ -10,10 +10,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import softuniBlog.bindingModel.UserBindingModel;
 import softuniBlog.entity.Role;
 import softuniBlog.entity.User;
@@ -38,9 +41,20 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String registerProcess(UserBindingModel userBindingModel){
+    public String registerProcess(UserBindingModel userBindingModel, RedirectAttributes redirectAttributes){
 
         if(!userBindingModel.getPassword().equals(userBindingModel.getConfirmPassword())){
+            redirectAttributes.addFlashAttribute("error", "Password does not match the confirm password.");
+            return "redirect:/register";
+        }
+
+        if(userBindingModel.getPassword().length() < 6){
+            redirectAttributes.addFlashAttribute("error", "Password length must be at least 6 characters long.");
+            return "redirect:/register";
+        }
+
+        if(userBindingModel.getFullName().length() < 1){
+            redirectAttributes.addFlashAttribute("error", "Full name field cannot be empty.");
             return "redirect:/register";
         }
 
@@ -58,6 +72,7 @@ public class UserController {
 
         this.userRepository.saveAndFlush(user);
 
+        redirectAttributes.addFlashAttribute("successfullyCreatedUser", "Your account has been successfully created. Now you can use your email and password to log in.");
         return "redirect:/login";
     }
 

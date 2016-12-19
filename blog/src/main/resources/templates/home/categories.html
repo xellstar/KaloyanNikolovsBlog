@@ -1,12 +1,22 @@
 <main>
     <div class="container body-content">
         <div class="row">
-            <div class="col-md-6" th:each="category : ${categories}">
-            <header>
-                        <a th:href="@{category/{id}(id = ${category.id})}" th:text="${category.name}">
-                        </a>
-            </header>
-            </div>
+            <table class="table table-striped table-hover ">
+                <thead>
+                <h3>
+                <th>Categories</th>
+                </h3>
+                </thead>
+                <div class="col-md-2" th:each="category : ${categories}">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <h4><a th:href="@{category/{id}(id = ${category.id})}" class="btn-sm btn-success">View Articles</a><a th:text="${category.name}"></a></h4>
+                        </td>
+                    </tr>
+                    </tbody>
+                </div>
+            </table>
         </div>
     </div>
 </main>
