@@ -3572,10 +3572,11 @@ tbody.collapse.in {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   color: #ffffff;
-  background-color: #93c54b;
-  border-style:solid;
-  border-width:2px;
-  border-color:#000000;
+  background-color: #C4E891;
+  border-color: #6b9430;
+  border-style: solid;
+  border-width: 1px;
+
 }
 
 .dropdown-toggle:focus {
@@ -5892,6 +5893,7 @@ button.list-group-item-danger.active:focus {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+
 }
 .well blockquote {
   border-color: #ddd;
@@ -6011,6 +6013,14 @@ button.close {
 .modal-body {
   position: relative;
   padding: 15px;
+  color: #3e3f3a;
+  rotation: 145grad;
+  opacity: 33;
+  mode: 'plaid';
+  width: 30px;
+  gap: 10;
+  offset: 0;
+  background-color: #ffffff;
 }
 .modal-footer {
   padding: 15px;
