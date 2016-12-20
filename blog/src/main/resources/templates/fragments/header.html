@@ -10,53 +10,39 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-                <div class="navbar-header">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li sec:authorize="isAuthenticated()">
-                            <a th:href="@{/article/create}">
-                                New Article
-                            </a>
-                        </li>
-                        <li sec:authorize="isAuthenticated()">
-                            <a th:href="@{/profile}">
-                                My Profile
-                            </a>
-                        </li>
-                        <li sec:authorize="isAuthenticated()">
-                            <a th:href="@{/logout}">
-                                Logout
-                            </a>
-                        </li>
-                        <li sec:authorize="isAnonymous()">
-                            <a th:href="@{/register}">
-                                REGISTER
-                            </a>
-                        </li>
-                        <li sec:authorize="isAnonymous()">
-                            <a th:href="@{/login}">
-                                LOGIN
-                            </a>
-                        </li>
-                        <li sec:authorize="hasRole('ADMIN')">
-                            <div class="dropdown">
-                                <button class="dropbtn">Admin Panel </button>
-                                <div class="dropdown-content">
-                                    <a th:href="@{/admin/categories/}">Categories</a>
-                                    <a th:href="@{/admin/users/}">Users</a>
-                                </div>
-                            </div>
-                        </li>
-                        <ul class="nav navbar-nav navbar-right">
+                <div class="menu-wrap">
+                    <nav class="menu">
+                        <ul class="clearfix">
+                            <li><a th:href="@{/}">Home</a></li>
                             <li>
-                                <div class="dropdown">
-                                    <button class="dropbtn">Menu</button>
-                                    <div class="dropdown-content">
-                                        <a th:href="@{/categories}">Categories</a>
-                                    </div>
-                                </div>
+                                <a href="#">Menu <span class="arrow">&#9660;</span></a>
+
+                                <ul class="sub-menu">
+                                    <li sec:authorize="isAuthenticated()"><a th:href="@{/profile}">My Profile</a></li>
+                                    <li sec:authorize="isAuthenticated()"><a th:href="@{/article/create}">New Article</a></li>
+                                    <li><a th:href="@{/categories}">Categories</a></li>
+                                    <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+                                </ul>
+                            </li>
+
+                            <li sec:authorize="isAnonymous()">
+                                <a th:href="@{/register}">Register</a>
+                            </li>
+
+                            <li sec:authorize="isAnonymous()">
+                            <li><a th:href="@{/login}">Login</a></li>
+                            </li>
+
+                            <li sec:authorize="hasRole('ADMIN')">
+                                <a href="#">Admin Panel <span class="arrow">&#9660;</span></a>
+
+                                <ul class="sub-menu">
+                                    <li><a th:href="@{/admin/categories/}">Manage Categories</a></li>
+                                    <li><a th:href="@{/admin/users/}">Manage Users</a></li>
+                                </ul>
                             </li>
                         </ul>
-                    </ul>
+                    </nav>
                 </div>
             </div>
         </div>

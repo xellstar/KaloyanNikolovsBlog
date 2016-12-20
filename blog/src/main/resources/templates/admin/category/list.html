@@ -8,9 +8,9 @@
                 <table class="table table-stripe table-hover ">
                     <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Actions</th>
+                        <th>[ID]</th>
+                        <th>[Name]</th>
+                        <th>[Actions]</th>
                     </tr>
                     </thead>
 
@@ -21,7 +21,7 @@
                         <td th:text="${category.name}"></td>
                         <td>
                             <a th:href="@{/admin/categories/edit/{id}(id=${category.id})}" class="btn-sm btn-info">Edit</a>
-                            <a th:href="@{/admin/categories/delete/{id}(id=${category.id})}" class="btn-smm btn-danger">Delete</a>
+                            <a th:href="@{/admin/categories/delete/{id}(id=${category.id})}" class="btn-sm btn-danger">Delete</a>
                         </td>
                     </tr>
                     </tbody>

@@ -21,9 +21,7 @@ import softuniBlog.repository.CategoryRepository;
 import softuniBlog.repository.TagRepository;
 import softuniBlog.repository.UserRepository;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Controller
 public class ArticleController {

@@ -79,7 +79,13 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public String login(Model model, RedirectAttributes redirectAttributes){
+    public String login(Model model, String error, RedirectAttributes redirectAttributes){
+        if (error!=null){
+            redirectAttributes.addFlashAttribute("error", "Your username and/or password is invalid.");
+
+            return "redirect:/login";
+        }
+
         model.addAttribute("view", "user/login");
 
         return "base-layout";
@@ -93,7 +99,7 @@ public class UserController {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
 
-        return "redirect:/login?logout";
+        return "redirect:/";
     }
 
     @GetMapping("/profile")

@@ -3120,6 +3120,8 @@ fieldset[disabled] .btn-default.focus {
   color: #ffffff;
   background-color: #325d88;
   border-color: transparent;
+  font-weight: 500;
+  font-size: 16px;
 }
 .btn-primary:focus,
 .btn-primary.focus {
@@ -3138,6 +3140,8 @@ fieldset[disabled] .btn-default.focus {
   color: #ffffff;
   background-color: #244363;
   border-color: rgba(0, 0, 0, 0);
+  font-size: 16px;
+  font-weight: 500;
 }
 .btn-primary:active:hover,
 .btn-primary.active:hover,
@@ -3174,7 +3178,7 @@ fieldset[disabled] .btn-primary.focus {
   background-color: #ffffff;
 }
 .btn-success {
-  color: #6b9430;
+  color: #ffffff;
   background-color: #93c54b;
   border-color: transparent;
 }
@@ -3186,7 +3190,7 @@ fieldset[disabled] .btn-primary.focus {
 }
 .btn-success:hover {
   color: #ffffff;
-  background-color: #ff0000;
+  background-color: #79a736;
   border-color: rgba(0, 0, 0, 0);
 }
 .btn-success:active,
@@ -3515,16 +3519,15 @@ tbody.collapse.in {
 }
 .dropup,
 
-  /* Dropdown Button */
+  /* Style The Dropdown Button */
 .dropbtn {
   background-color: #93c54b;
   color: #6b9430;
   padding: 20px;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 22px;
   font-weight: 500;
-  border: 1px solid transparent;
+  border: 1px solid;
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -3543,7 +3546,6 @@ tbody.collapse.in {
   font-size: 16px;
   line-height: 22px;
   font-weight: 500;
-  border: #3e3f3a;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
@@ -3551,7 +3553,7 @@ tbody.collapse.in {
 /* Links inside the dropdown */
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 10px 10px;
   text-decoration: none;
   display: block;
 }
@@ -3563,20 +3565,11 @@ tbody.collapse.in {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-.dropdown:hover {
-  color: #ffffff;
-  background-color: #93c54b;
-  border-color: rgba(0, 0, 0, 0);
-}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   color: #ffffff;
-  background-color: #C4E891;
-  border-color: #6b9430;
-  border-style: solid;
-  border-width: 1px;
-
+  background-color: #93c54b;
 }
 
 .dropdown-toggle:focus {
@@ -3617,7 +3610,7 @@ tbody.collapse.in {
   overflow: hidden;
   background-color: #90ff90;
 }
-.dropdown-menu > li > a {
+.dropdown-menu > li{
   display: block;
   padding: 3px 20px;
   clear: both;
@@ -3626,27 +3619,27 @@ tbody.collapse.in {
   color: #98978b;
   white-space: nowrap;
 }
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
+.dropdown-menu > li:hover,
+.dropdown-menu > li:focus {
   text-decoration: none;
   color: #98978b;
   background-color: #f8f5f0;
 }
-.dropdown-menu > .active > a,
-.dropdown-menu > .active > a:hover,
-.dropdown-menu > .active > a:focus {
+.dropdown-menu > .active,
+.dropdown-menu > .active:hover,
+.dropdown-menu > .active:focus {
   color: #6b9430;
   text-decoration: none;
   outline: 0;
   background-color: #f8f5f0;
 }
-.dropdown-menu > .disabled > a,
-.dropdown-menu > .disabled > a:hover,
-.dropdown-menu > .disabled > a:focus {
+.dropdown-menu > .disabled,
+.dropdown-menu > .disabled:hover,
+.dropdown-menu > .disabled:focus {
   color: #90ff90;
 }
-.dropdown-menu > .disabled > a:hover,
-.dropdown-menu > .disabled > a:focus {
+.dropdown-menu > .disabled:hover,
+.dropdown-menu > .disabled:focus {
   text-decoration: none;
   background-color: transparent;
   background-image: none;
@@ -6985,4 +6978,90 @@ input:focus,
 .panel-default .panel-title,
 .panel-default .panel-footer {
   color: #98978b;
+}
+/*----- Menu Outline -----*/
+.menu-wrap {
+  width:100%;
+  background:#93c54b;
+}
+
+.menu {
+  width:1000px;
+  margin:0px auto;
+}
+
+.menu li {
+  margin:0px;
+  list-style:none;
+  padding-top: 9px;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.menu a {
+  transition:all linear 0.15s;
+  color:#6b9430;
+}
+
+.menu li:hover > a, .menu .current-item > a {
+  text-decoration:none;
+  color:#325d88;
+}
+
+.menu .arrow {
+  font-size:11px;
+  line-height:0%;
+}
+
+/*----- Top Level -----*/
+.menu > ul > li {
+  float:left;
+  display:inline-block;
+  position:relative;
+  font-size:19px;
+}
+
+.menu > ul > li > a {
+  padding:15px 40px;
+  display:inline-block;
+  /* text-shadow:0px 1px 0px rgba(0,0,0,0.4); */
+}
+
+.menu > ul > li:hover > a, .menu > ul > .current-item > a {
+  background:#C4E891;
+}
+
+/*----- Bottom Level -----*/
+.menu li:hover .sub-menu {
+  z-index:1;
+  opacity:1;
+}
+
+.sub-menu {
+  width:160%;
+  padding:5px 0px;
+  position:absolute;
+  top:100%;
+  left:0px;
+  z-index:-1;
+  opacity:0;
+  transition:opacity linear 0.15s;
+  /* box-shadow:0px 2px 3px rgba(0,0,0,0.2); */
+  background:#C4E891;
+}
+
+.sub-menu li {
+  display:block;
+  font-size:16px;
+}
+
+.sub-menu li a {
+  padding:10px 30px;
+  display:block;
+}
+
+.sub-menu li a:hover, .sub-menu .current-item a {
+  background:#6b9430;
 }
