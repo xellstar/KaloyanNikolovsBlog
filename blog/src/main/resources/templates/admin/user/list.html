@@ -13,7 +13,6 @@
                     </tr>
                     </thead>
                     <tbody>
-
                     <th:block th:each="user : ${users}">
                         <tr th:class="${user.isAdmin() ? 'info' : null}">
                             <td th:text="${user.id}"></td>
@@ -25,7 +24,6 @@
                             </td>
                         </tr>
                     </th:block>
-
                     </tbody>
                 </table>
             </div>

@@ -1,31 +1,31 @@
 <!DOCTYPE HTML>
-    <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
-    <head th:include="fragments/head" th:with="pageTitle='Softuni Blog'"></head>
+<head th:include="fragments/head" th:with="pageTitle='Softuni Blog'"></head>
 
-    <body>
+<body>
 
-    <header th:include="fragments/header"></header>
+<header th:include="fragments/header"></header>
 
-    <main>
-        <br/>
-        <br/>
-        <center>
-            <div class="container body-content">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <a th:href="@{/}">
+<main>
+    <br/>
+    <br/>
+    <center>
+        <div class="container body-content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <a th:href="@{/}">
                         <img th:src="@{/images/error404.png}" th:width="878" th:height="564"/>
-                        </a>
-                    </div>
+                    </a>
                 </div>
             </div>
-        </center>
-    </main>
+        </div>
+    </center>
+</main>
 
-    <footer th:include="fragments/footer"></footer>
+<footer th:include="fragments/footer"></footer>
 
-    <span th:include="fragments/scripts-bundle"></span>
+<span th:include="fragments/scripts-bundle"></span>
 
-    </body>
-    </html>
+</body>
+</html>
