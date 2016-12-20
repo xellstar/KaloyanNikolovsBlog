@@ -33,6 +33,8 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
+    BindingResult bindingResult;
+
     @GetMapping("/register")
     public String register(Model model) {
         model.addAttribute("view", "user/register");
@@ -77,7 +79,7 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public String login(Model model){
+    public String login(Model model, RedirectAttributes redirectAttributes){
         model.addAttribute("view", "user/login");
 
         return "base-layout";

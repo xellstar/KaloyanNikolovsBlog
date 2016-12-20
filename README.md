@@ -1,2 +1,3 @@
 # KaloyanNikolovsBlog
-My blog project for SoftUni.
+
+My Java blog project for SoftUni.

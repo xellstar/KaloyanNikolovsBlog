@@ -24,10 +24,10 @@ public class HomeController {
     @GetMapping("/")
     public String index(Model model) {
 
-        List<Category> categories = this.categoryRepository.findAll();
+        List<Article> articles = this.articleRepository.findAll();
 
-        model.addAttribute("view", "home/index");
-        model.addAttribute("categories", categories);
+        model.addAttribute("view", "article/list");
+        model.addAttribute("articles", articles);
 
         return "base-layout";
     }
